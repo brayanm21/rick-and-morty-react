@@ -1,0 +1,18 @@
+/* comentarios cntrol + k + c  */
+/* vamos a usar grid en este css */
+/* grid es un modelo de rejillas o cuadriculas para css */
+.grid-img{
+    display: grid;
+    /* grid-template-columns: repeat(4, 1fr); */
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    /* grid-template-columns: 1fr 1fr 1fr; */
+}
+.grid-page{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+button{
+    background-color: black;
+    color: white;
+}
