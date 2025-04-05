@@ -10,14 +10,21 @@ const Characters = ({ characters }) => {
           //cada elemento va a ser un character
           return (
             //retornamos //devemos darle una key para que se pueda identificar
-            <div key={character.id}>
-              <p>{character.name}</p>
-              <img src={character.image} alt={character.name} />
+            <div key={character.id} className="card">
+              <img
+                src={character.image}
+                alt={character.name}
+                className="card-img"
+              />
+              <div className="card-content">
+                <h3 className="card-title">{character.name}</h3>
+                <p className="card-description"></p>
+                <button>Ver más</button>
+              </div>
             </div>
           ); //usamos character y no characters ya que estamos en cada elemento
         }
       )}
-      
     </div>
   );
 };
