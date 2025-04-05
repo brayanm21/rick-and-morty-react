@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Characters from "./components/Characters";
+import Page from "./components/Page";
 
 function App() {
   //state  = estado que guarda los datos de un componente que puede cambiar
@@ -20,18 +21,14 @@ function App() {
     fetchData(); //llamamos la funcion
   }, [pagina]); //cada vez que el estado de pagina cambie este llamara de nuevo el hook de useeffect
 
+  function handlePage(changue) {
+    setPagina(pagina + changue);
+  }
+
   return (
     <>
       <h1>Api rick y morty</h1>
-      <div className="grid-page">
-        <button onClick={() => setPagina((pagina) => pagina - 1)}>
-          Anterior pagina
-        </button>
-        <p>{pagina}</p>
-        <button onClick={() => setPagina((pagina) => pagina + 1)}>
-          Siguiente pagina
-        </button>
-      </div>
+      <Page onPage={handlePage} pagina={pagina}></Page>
       <Characters characters={characters} />
     </>
   );
