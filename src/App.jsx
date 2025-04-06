@@ -6,8 +6,8 @@ import Page from "./components/Page";
 function App() {
   //state  = estado que guarda los datos de un componente que puede cambiar
   const [characters, setCharacters] = useState([]);
-  const [pagina, setPagina] = useState(1);
-  let api = `https://rickandmortyapi.com/api/character/?page=${pagina}`;
+  const [page, setPage] = useState(1);
+  let api = `https://rickandmortyapi.com/api/character/?page=${page}`;
   //hook = es una función de JavaScript que permite acceder al estado y ciclo de vida de React
   //hook useEffect = es una herramienta que permite controlar los efectos secundarios en los componentes
   useEffect(() => {
@@ -19,16 +19,16 @@ function App() {
       setCharacters(data.results); //damos los datos al estado usando setCharacters
     }
     fetchData(); //llamamos la funcion
-  }, [pagina]); //cada vez que el estado de pagina cambie este llamara de nuevo el hook de useeffect
+  }, [page]); //cada vez que el estado de pagina cambie este llamara de nuevo el hook de useeffect
 
   function handlePage(changue) {
-    setPagina(pagina + changue);
+    setPage(page + changue);
   }
 
   return (
     <>
       <h1>Api rick y morty</h1>
-      <Page onPage={handlePage} pagina={pagina}></Page>
+      <Page handlePage={handlePage} page={page}></Page>
       <Characters characters={characters} />
     </>
   );

@@ -16,9 +16,10 @@ const Characters = ({ characters }) => {
                 alt={character.name}
                 className="card-img"
               />
+              <p className={`position ${character.status}`}>{character.status}</p>
               <div className="card-content">
                 <h3 className="card-title">{character.name}</h3>
-                <p className="card-description"></p>
+                <p className="card-description">{character.species} - {character.gender}</p>
                 <button>Ver más</button>
               </div>
             </div>
