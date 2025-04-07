@@ -68,7 +68,7 @@ p {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para dar un efecto de profundidad */
   margin: 20px;
   font-family: Arial, sans-serif;
-  position: relative; 
+  position: relative;
   /* para poder poner dentro de la imagen algo, en este caso ponemos position */
 }
 
@@ -113,4 +113,30 @@ p {
   font-size: 1em;
   margin-bottom: 20px;
   color: #b0b0b0; /* Un color gris más suave para el texto */
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  background-color: #333; /* Fondo oscuro para el input */
+  color: white; /* Texto blanco */
+  border: 2px solid #555; /* Borde gris oscuro */
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 8px; /* Bordes redondeados */
+  width: 250px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  outline: none; /* Sin contorno en el foco */
+  border-color: #64ffb7; /* Borde verde cuando está en foco */
+}
+
+input::placeholder {
+  color: #aaa; /* Color claro para el texto del placeholder */
 }

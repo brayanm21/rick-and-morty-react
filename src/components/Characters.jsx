@@ -1,9 +1,9 @@
 import React from "react";
 //rafce crear el esqueleto de este componente
 
-const Characters = ({ characters }) => {
+const Characters = ({ characters , onScroll}) => {
   return (
-    <div className="grid-img">
+    <div className="grid-img" onScroll={onScroll}>
       {characters.map(
         //ya que character es un array usamos map para recorrerlo
         (character) => {
