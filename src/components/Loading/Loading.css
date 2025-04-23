@@ -1,0 +1,15 @@
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ocupar toda la altura de la pantalla */
+  color: white;
+}
+
+.loading-text {
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #04b3cb; /* Color celeste brillante */
+}
+

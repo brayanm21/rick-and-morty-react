@@ -1,0 +1,27 @@
+/* .grid-page {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+} */
+/* .p-page {
+  color: #121212;
+  border-radius: 50px; /* Aplica bordes redondeados */
+  /* padding: 5px; Espaciado interno */
+  /* background-color: #64ffb7; Color de fondo */
+  /* border: 2px solid #7ed4ac; Borde de color azul */
+  /* width: 30px; */
+/* } */ 
+
+.paginator-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.paginator-page-number {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #e0e0e0;
+}

@@ -1,0 +1,43 @@
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #1e1e1e; /* Fondo oscuro similar al del resto de la app */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    margin: 50px auto;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+  }
+  
+  .error-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #04b3cb; /* Celeste brillante, el mismo que usas para los títulos */
+  }
+  
+  .error-message {
+    font-size: 1em;
+    color: #b0b0b0; /* Gris suave, que es coherente con el resto de los textos */
+    margin-top: 5px;
+  }
+
+  .highlight {
+    color: #04b3cb;
+    font-weight: 600;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
