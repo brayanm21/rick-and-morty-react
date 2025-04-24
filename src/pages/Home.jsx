@@ -3,7 +3,8 @@ import CharacterSearchInput from "../components/CharacterSearchInput/CharacterSe
 import Paginator from "../components/Paginator/Paginator";
 import Card from "../components/Card/Card";
 import ErrorSearch from "../components/ErrorSearch/ErrorSearch";
-import useFetchCharacters from "../hooks/useFetchCharacters";
+import useFetchAllCharacters from "../hooks/useFetchAllCharacters";
+import useSearchCharacters from "../hooks/useSearchCharacters";
 import useInfiniteScroll from "../hooks/useInfiniteScroll";
 import Loading from "../components/Loading/Loading";
 
@@ -12,32 +13,38 @@ const Home = () => {
   const [inputValue, setInputValue] = useState("");
   const [pageSearch, setPageSearch] = useState(1);
 
+  const isSearching = inputValue !== "";
+
+  // Datos de exploración
   const {
-    allCharacters,
+    characters: allCharacters,
+    loading: loadingAll,
+    //isFetchSuccessful: fetchAllSuccess,
+  } = useFetchAllCharacters(page);
+
+  // Datos de búsqueda
+  const {
     searchedCharacters,
-    loading,
-    isFetchSuccessful,
-    hasMoreSearchResults,
-    isInputActive,
+    loading: loadingSearch,
+    isFetchSuccessful: fetchSearchSuccess,
+    hasMoreResults,
     setSearchedCharacters,
-    setHasMoreSearchResults,
-    setIsInputActive,
-  } = useFetchCharacters(inputValue, page, pageSearch);
+    setHasMoreResults,
+  } = useSearchCharacters(inputValue, pageSearch);
 
   useInfiniteScroll({
-    loading,
-    hasMore: hasMoreSearchResults && !isInputActive, // solo activa si estás buscando
+    loading: loadingSearch,
+    hasMore: isSearching && hasMoreResults,
     callback: () => {
       setPageSearch((prev) => prev + 1);
     },
   });
 
-  const handleInput = (changue) => {
-    setInputValue(changue);
-    setIsInputActive(changue === "");
-    setSearchedCharacters([]);
-    setPageSearch(1);
-    setHasMoreSearchResults(true);
+  const handleInput = (value) => {
+    setInputValue(value);
+    setSearchedCharacters([]); // Reset resultados anteriores
+    setPageSearch(1); // Reset página de búsqueda
+    setHasMoreResults(true); // Reiniciar scroll
   };
 
   const handlePage = (changue) => {
@@ -47,24 +54,26 @@ const Home = () => {
   const renderMainView = () => (
     <>
       <Paginator handlePage={handlePage} page={page} maxPages={42} />
-      <Card characters={allCharacters} isLoading={loading} />
+      <Card characters={allCharacters} isLoading={loadingAll} />
     </>
   );
 
   const renderSearchView = () =>
-    isFetchSuccessful ? (
-      <Card characters={searchedCharacters} isLoading={loading} />
+    fetchSearchSuccess ? (
+      <Card characters={searchedCharacters} isLoading={loadingSearch} />
     ) : (
       <ErrorSearch searchQuery={inputValue} />
     );
 
+  const isLoading =
+    (isSearching && loadingSearch && searchedCharacters.length === 0) ||
+    (!isSearching && loadingAll && allCharacters.length === 0);
+
   return (
     <>
-      {loading &&
-        ((isInputActive && allCharacters.length === 0) ||
-          (!isInputActive && searchedCharacters.length === 0)) && <Loading />}
+      {isLoading && <Loading />}
       <CharacterSearchInput onChange={handleInput} value={inputValue} />
-      {isInputActive ? renderMainView() : renderSearchView()}
+      {isSearching ? renderSearchView() : renderMainView()}
     </>
   );
 };
