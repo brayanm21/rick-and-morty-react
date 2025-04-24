@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { fetchCharactersByPage } from "../services/characterService";
 
 const useFetchAllCharacters = (page) => {
   const [characters, setCharacters] = useState([]);
@@ -6,15 +7,10 @@ const useFetchAllCharacters = (page) => {
   const [isFetchSuccessful, setIsFetchSuccessful] = useState(true);
 
   useEffect(() => {
-    const fetchCharacters = async () => {
+    const getCharacters = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`https://rickandmortyapi.com/api/character/?page=${page}`);
-        if (!res.ok) {
-          setIsFetchSuccessful(false);
-          return;
-        }
-        const data = await res.json();
+        const data = await fetchCharactersByPage(page);
         setCharacters(data.results);
         setIsFetchSuccessful(true);
       } catch (err) {
@@ -25,7 +21,7 @@ const useFetchAllCharacters = (page) => {
       }
     };
 
-    fetchCharacters();
+    getCharacters();
   }, [page]);
 
   return { characters, loading, isFetchSuccessful };

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { searchCharactersByName } from "../services/characterService";
 
 const useSearchCharacters = (inputValue, pageSearch) => {
   const [searchedCharacters, setSearchedCharacters] = useState([]);
@@ -9,18 +10,10 @@ const useSearchCharacters = (inputValue, pageSearch) => {
   useEffect(() => {
     if (!inputValue) return;
 
-    const fetchSearchResults = async () => {
+    const getSearchResults = async () => {
       setLoading(true);
       try {
-        const url = `https://rickandmortyapi.com/api/character/?page=${pageSearch}&name=${inputValue}`;
-        const response = await fetch(url);
-        if (!response.ok) {
-          setIsFetchSuccessful(false);
-          setHasMoreResults(false);
-          return;
-        }
-
-        const data = await response.json();
+        const data = await searchCharactersByName(inputValue, pageSearch);
         setSearchedCharacters((prev) => [...prev, ...data.results]);
         setHasMoreResults(Boolean(data.info?.next));
         setIsFetchSuccessful(true);
@@ -33,7 +26,7 @@ const useSearchCharacters = (inputValue, pageSearch) => {
       }
     };
 
-    fetchSearchResults();
+    getSearchResults();
   }, [inputValue, pageSearch]);
 
   return {
