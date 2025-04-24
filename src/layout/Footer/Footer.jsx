@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaReact  } from "react-icons/fa";
 
 const Footer = () => {
     return (
@@ -22,6 +22,14 @@ const Footer = () => {
               className="icon-link"
             >
               <FaLinkedin className="icon" />
+            </a>
+            <a
+              href="https://es.react.dev/"
+              target="_blank"
+              rel="noreferrer"
+              className="icon-link"
+            >
+              <FaReact className="icon" />
             </a>
           </div>
           <div className="signature">

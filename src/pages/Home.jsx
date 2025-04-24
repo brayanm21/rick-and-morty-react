@@ -58,12 +58,15 @@ const Home = () => {
     </>
   );
 
-  const renderSearchView = () =>
-    fetchSearchSuccess ? (
-      <Card characters={searchedCharacters} isLoading={loadingSearch} />
+  const renderSearchView = () => {
+    if (loadingSearch && searchedCharacters.length === 0) return null;
+
+    return fetchSearchSuccess ? (
+      <Card characters={searchedCharacters} />
     ) : (
       <ErrorSearch searchQuery={inputValue} />
     );
+  };
 
   const isLoading =
     (isSearching && loadingSearch && searchedCharacters.length === 0) ||
@@ -73,7 +76,7 @@ const Home = () => {
     <>
       {isLoading && <Loading />}
       <CharacterSearchInput onChange={handleInput} value={inputValue} />
-      {isSearching ? renderSearchView() : renderMainView()}
+      {!isLoading && (isSearching ? renderSearchView() : renderMainView())}
     </>
   );
 };
