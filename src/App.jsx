@@ -1,15 +1,18 @@
 import Home from "./pages/Home";
 import "./App.css";
-import Header from "./components/Header/Header";
+import './assets/styles/themes.css';
+import Navbar from "./components/Navbar/Navbar";
+import { ThemeProvider } from "./context/ThemeContext";
 
 function App() {
   return (
     <>
-  <Header/>
-  <Home />;
-  </>
-  )
-  
+      <ThemeProvider>
+        <Navbar />
+        <Home />
+      </ThemeProvider>
+    </>
+  );
 }
 
 export default App;

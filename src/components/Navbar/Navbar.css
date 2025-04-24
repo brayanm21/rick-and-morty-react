@@ -1,10 +1,9 @@
-/* NAVBAR STYLES */
 .navbar {
   width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #1e2939;
+  background-color: var(--header-bg);
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
@@ -14,10 +13,11 @@
 .nav-links {
   display: flex;
   gap: 2rem;
+  align-items: center;
 }
 
 .nav-links a {
-  color: #04b3cb;
+  color: var(--primary-color);
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
@@ -25,7 +25,7 @@
 }
 
 .nav-links a:hover {
-  color: #b1e12c;
+  color: var(--link-hover-color);
 }
 
 /* HAMBURGER ICON */
@@ -39,7 +39,7 @@
 .bar {
   width: 25px;
   height: 3px;
-  background-color: #04b3cb;
+  background-color: var(--primary-color);
   border-radius: 2px;
 }
 
@@ -49,7 +49,7 @@
     position: absolute;
     top: 70px;
     right: 0;
-    background-color: #1e2939;
+    background-color: var(--header-bg);
     flex-direction: column;
     width: 100%;
     padding: 1rem 0;
@@ -64,8 +64,14 @@
   .hamburger {
     display: flex;
   }
+
+  .nav-actions {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
 }
 .logo-img {
-    height: 60px; /* más razonable que 100px */
-    object-fit: contain;
-  }
+  height: 60px; /* más razonable que 100px */
+  object-fit: contain;
+}

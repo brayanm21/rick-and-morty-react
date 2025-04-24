@@ -1,5 +1,5 @@
 .character-card {
-  background-color: #1e1e1e;
+  background-color: var(--card-bg);
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -22,13 +22,12 @@
 
 .card-content {
   padding: 16px;
-  background-color: #2a2a2a;
 }
 
 .card-title {
   font-size: 1.4em;
   margin-bottom: 8px;
-  color: #04b3cb;
+  color: var(--card-title-color);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -37,7 +36,7 @@
 .card-description {
   font-size: 0.95em;
   margin-bottom: 16px;
-  color: #cfcfcf;
+  color: var(--card-description-color);
 }
 
 .status-badge {

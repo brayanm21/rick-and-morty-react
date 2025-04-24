@@ -6,9 +6,9 @@
 }
 
 .search-input {
-  background-color: #2b2b2b;
-  color: #ffffff;
-  border: 2px solid #444;
+  background-color: var(--input-bg);
+  color: var(--input-text-color);
+  border: 2px solid var(--input-border-color);
   padding: 12px 20px;
   font-size: 16px;
   border-radius: 10px;
@@ -21,9 +21,9 @@
 
 .search-input:focus {
   outline: none;
-  border-color: #04b3cb;
-  box-shadow: 0 0 8px #04b3cbaa;
-  background-color: #1f1f1f;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 8px var(--primary-color)aa;
+  background-color: var(--input-bg);
 }
 
 .search-input::placeholder {

@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 
 const useFetchCharacters = (inputValue, page, pageSearch) => {
-  const [characters, setCharacters] = useState([]);
-  const [characterName, setCharacterName] = useState([]);
+  const [allCharacters, setAllCharacters] = useState([]);
+  const [searchedCharacters, setSearchedCharacters] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [stateFetch, setStateFetch] = useState(true);
-  const [nextScroll, setNextScroll] = useState(true);
-  const [stateInput, setStateInput] = useState(true);
+  const [isFetchSuccessful, setIsFetchSuccessful] = useState(true);
+  const [hasMoreSearchResults, setHasMoreSearchResults] = useState(true);
+  const [isInputActive, setIsInputActive] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,23 +20,23 @@ const useFetchCharacters = (inputValue, page, pageSearch) => {
 
         const response = await fetch(url);
         if (!response.ok) {
-          setStateFetch(false);
+          setIsFetchSuccessful(false);
           return;
         }
 
         const data = await response.json();
 
         if (inputValue === "") {
-          setCharacters(data.results);
+          setAllCharacters(data.results);
         } else {
-          setCharacterName((prev) => [...prev, ...data.results]);
-          setNextScroll(Boolean(data.info?.next));
+          setSearchedCharacters((prev) => [...prev, ...data.results]);
+          setHasMoreSearchResults(Boolean(data.info?.next));
         }
 
-        setStateFetch(true);
+        setIsFetchSuccessful(true);
       } catch (error) {
         console.error("Error during fetch:", error);
-        setStateFetch(false);
+        setIsFetchSuccessful(false);
       } finally {
         setLoading(false);
       }
@@ -44,21 +44,21 @@ const useFetchCharacters = (inputValue, page, pageSearch) => {
 
     if (inputValue === "") {
       fetchData();
-    } else if (nextScroll) {
+    } else if (hasMoreSearchResults) {
       fetchData();
     }
-  }, [inputValue, page, pageSearch]);
+  }, [inputValue, page, pageSearch]);// eslint-disable-line react-hooks/exhaustive-deps
 
   return {
-    characters,
-    characterName,
+    allCharacters,
+    searchedCharacters,
     loading,
-    stateFetch,
-    nextScroll,
-    stateInput,
-    setCharacterName,
-    setNextScroll,
-    setStateInput,
+    isFetchSuccessful,
+    hasMoreSearchResults,
+    isInputActive,
+    setSearchedCharacters,
+    setHasMoreSearchResults,
+    setIsInputActive,
   };
 };
 

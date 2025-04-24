@@ -1,0 +1,69 @@
+/* VARIABLES DE COLORES */
+:root {
+  --primary-color: #04b3cb; /* Color principal */
+  --header-bg: #1e2939; /* Fondo del navbar */
+  --card-bg: #1e1e1e; /* Fondo de las tarjetas */
+  --card-title-color: #04b3cb; /* Color de los títulos en las tarjetas */
+  --card-description-color: #cfcfcf; /* Color de las descripciones en las tarjetas */
+  --button-bg-color: #04b3cb; /* Fondo de los botones */
+  --button-hover-bg-color: #06cbe5; /* Fondo hover de los botones */
+  --input-border-color: #04b3cb; /* Borde de los inputs */
+  --error-bg-color: #1e1e1e; /* Fondo de los errores */
+  --error-text-color: #04b3cb; /* Color del texto de error */
+  --text-color: #ffffff; /* Color del texto */
+  --background-color: #1c2c3c; /* Fondo oscuro */
+  --link-hover-color: #b1e12c; /* Color al pasar sobre los enlaces */
+  --btn-bg: #04b3cb; /* Color del fondo del botón */
+  --btn-text-color: #1a1a1a; /* Color del texto del botón */
+  --btn-hover-bg: #06cbe5; /* Color del fondo cuando se pasa el ratón */
+  --btn-disabled-bg: #6daeb4; /* Fondo del botón deshabilitado */
+  --btn-disabled-text-color: #444; /* Color del texto del botón deshabilitado */
+}
+
+/* Modo claro */
+body.light-theme {
+  --primary-color: #007acc; /* Color principal claro */
+  --header-bg: #f1f1f1; /* Fondo navbar claro */
+  --card-bg: #ffffff; /* Fondo claro para las tarjetas */
+  --card-title-color: #007acc; /* Título claro */
+  --card-description-color: #1a1a1a; /* Descripción clara */
+  --button-bg-color: #007acc; /* Botón claro */
+  --button-hover-bg-color: #005f8e; /* Hover del botón */
+  --input-bg: #ffffff;
+  --input-text-color: #1a1a1a;
+  --input-border-color: #007acc; /* Borde input claro */
+  --error-bg-color: #ffffff; /* Fondo de error claro */
+  --error-text-color: #007acc; /* Texto de error claro */
+  --text-color: #1a1a1a; /* Texto claro */
+  --background-color: #f5f7fa; /* Fondo claro */
+  --link-hover-color: #004f6e; /* Hover de enlaces claros */
+  --btn-bg: #006f8e; /* Color de fondo para el tema claro */
+  --btn-text-color: #ffffff; /* Color del texto en el tema claro */
+  --btn-hover-bg: #0195b8; /* Hover en tema claro */
+  --btn-disabled-bg: #a4d5e2; /* Fondo deshabilitado en tema claro */
+  --btn-disabled-text-color: #ddd; /* Texto deshabilitado en tema claro */
+}
+
+/* Modo oscuro */
+body.dark-theme {
+  --primary-color: #04b3cb; /* Color principal oscuro */
+  --header-bg: #1e2939; /* Fondo navbar oscuro */
+  --card-bg: #1e1e1e; /* Fondo oscuro para las tarjetas */
+  --card-title-color: #04b3cb; /* Título oscuro */
+  --card-description-color: #cfcfcf; /* Descripción oscura */
+  --button-bg-color: #04b3cb; /* Botón oscuro */
+  --button-hover-bg-color: #06cbe5; /* Hover del botón oscuro */
+  --input-bg: #1e1e1e;
+  --input-text-color: #ffffff;
+  --input-border-color: #04b3cb; /* Borde input oscuro */
+  --error-bg-color: #1e1e1e; /* Fondo de error oscuro */
+  --error-text-color: #04b3cb; /* Texto de error oscuro */
+  --text-color: #ffffff; /* Texto oscuro */
+  --background-color: #1c2c3c; /* Fondo oscuro */
+  --link-hover-color: #b1e12c; /* Hover de enlaces oscuros */
+  --btn-bg: #04b3cb; /* Color del fondo del botón */
+  --btn-text-color: #1a1a1a; /* Color del texto del botón */
+  --btn-hover-bg: #06cbe5; /* Color del fondo cuando se pasa el ratón */
+  --btn-disabled-bg: #6daeb4; /* Fondo del botón deshabilitado */
+  --btn-disabled-text-color: #444; /* Color del texto del botón deshabilitado */
+}

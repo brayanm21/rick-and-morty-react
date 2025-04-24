@@ -13,20 +13,20 @@ const Home = () => {
   const [pageSearch, setPageSearch] = useState(1);
 
   const {
-    characters,
-    characterName,
+    allCharacters,
+    searchedCharacters,
     loading,
-    stateFetch,
-    nextScroll,
-    stateInput,
-    setCharacterName,
-    setNextScroll,
-    setStateInput,
+    isFetchSuccessful,
+    hasMoreSearchResults,
+    isInputActive,
+    setSearchedCharacters,
+    setHasMoreSearchResults,
+    setIsInputActive,
   } = useFetchCharacters(inputValue, page, pageSearch);
 
   useInfiniteScroll({
     loading,
-    hasMore: nextScroll && !stateInput, // solo activa si estás buscando
+    hasMore: hasMoreSearchResults && !isInputActive, // solo activa si estás buscando
     callback: () => {
       setPageSearch((prev) => prev + 1);
     },
@@ -34,10 +34,10 @@ const Home = () => {
 
   const handleInput = (changue) => {
     setInputValue(changue);
-    setStateInput(changue === "");
-    setCharacterName([]);
+    setIsInputActive(changue === "");
+    setSearchedCharacters([]);
     setPageSearch(1);
-    setNextScroll(true);
+    setHasMoreSearchResults(true);
   };
 
   const handlePage = (changue) => {
@@ -47,13 +47,13 @@ const Home = () => {
   const renderMainView = () => (
     <>
       <Paginator handlePage={handlePage} page={page} maxPages={42} />
-      <Card characters={characters} isLoading={loading} />
+      <Card characters={allCharacters} isLoading={loading} />
     </>
   );
 
   const renderSearchView = () =>
-    stateFetch ? (
-      <Card characters={characterName} isLoading={loading} />
+    isFetchSuccessful ? (
+      <Card characters={searchedCharacters} isLoading={loading} />
     ) : (
       <ErrorSearch searchQuery={inputValue} />
     );
@@ -61,10 +61,10 @@ const Home = () => {
   return (
     <>
       {loading &&
-        ((stateInput && characters.length === 0) ||
-          (!stateInput && characterName.length === 0)) && <Loading />}
+        ((isInputActive && allCharacters.length === 0) ||
+          (!isInputActive && searchedCharacters.length === 0)) && <Loading />}
       <CharacterSearchInput onChange={handleInput} value={inputValue} />
-      {stateInput ? renderMainView() : renderSearchView()}
+      {isInputActive ? renderMainView() : renderSearchView()}
     </>
   );
 };
