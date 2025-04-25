@@ -1,5 +1,5 @@
 import React from "react";
-import "./ErrorSearch.css"; // Crea un archivo CSS para este componente
+import "./ErrorSearch.css";
 
 const ErrorSearch = ({ message = "No existe ese nombre", searchQuery }) => {
   return (

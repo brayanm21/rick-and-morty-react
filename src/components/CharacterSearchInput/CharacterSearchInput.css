@@ -15,14 +15,14 @@
   width: 100%;
   max-width: 320px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease,
-    background-color 0.3s ease;
+  background-color 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 255, 170, 0.102);
 }
 
 .search-input:focus {
   outline: none;
   border-color: var(--primary-color);
-  box-shadow: 0 0 8px var(--primary-color)aa;
+  box-shadow: 0 0 8px var(--primary-color);
   background-color: var(--input-bg);
 }
 

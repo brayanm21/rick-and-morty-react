@@ -1,5 +1,5 @@
 import React from "react";
-import "./Loading.css"; // Estilos para el loader
+import "./Loading.css";
 import Spinner from "../Spinner/Spinner";
 
 const Loading = () => {

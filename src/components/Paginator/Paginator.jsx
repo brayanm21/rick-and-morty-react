@@ -11,7 +11,7 @@ const Paginator = ({ handlePage, page, maxPages }) => {
         disabled={page <= 1}
         aria-label="Página anterior"
       >
-        <FaArrowLeft className="paginator-icon" />
+        <FaArrowLeft />
         <span>Anterior</span>
       </Button>
 
@@ -23,7 +23,7 @@ const Paginator = ({ handlePage, page, maxPages }) => {
         aria-label="Página siguiente"
       >
         <span>Siguiente</span>
-        <FaArrowRight className="paginator-icon" />
+        <FaArrowRight />
       </Button>
     </div>
   );

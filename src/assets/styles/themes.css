@@ -1,69 +1,70 @@
 /* VARIABLES DE COLORES */
 :root {
-  --primary-color: #04b3cb; /* Color principal */
-  --header-bg: #1e2939; /* Fondo del navbar */
-  --card-bg: #1e1e1e; /* Fondo de las tarjetas */
-  --card-title-color: #04b3cb; /* Color de los títulos en las tarjetas */
-  --card-description-color: #cfcfcf; /* Color de las descripciones en las tarjetas */
-  --button-bg-color: #04b3cb; /* Fondo de los botones */
-  --button-hover-bg-color: #06cbe5; /* Fondo hover de los botones */
-  --input-border-color: #04b3cb; /* Borde de los inputs */
-  --error-bg-color: #1e1e1e; /* Fondo de los errores */
-  --error-text-color: #04b3cb; /* Color del texto de error */
-  --text-color: #ffffff; /* Color del texto */
-  --background-color: #1c2c3c; /* Fondo oscuro */
-  --link-hover-color: #b1e12c; /* Color al pasar sobre los enlaces */
-  --btn-bg: #04b3cb; /* Color del fondo del botón */
-  --btn-text-color: #1a1a1a; /* Color del texto del botón */
-  --btn-hover-bg: #06cbe5; /* Color del fondo cuando se pasa el ratón */
-  --btn-disabled-bg: #6daeb4; /* Fondo del botón deshabilitado */
-  --btn-disabled-text-color: #444; /* Color del texto del botón deshabilitado */
+  /* Colores Principales */
+  --primary-color-dark: #04b3cb; /* Color principal dark*/
+  --secondary-color-dark: #06cbe5; /* Color secundario dark*/
+  --tertiary-color-dark: #1a1a1a; /* Color terciario dark*/
+  --quaternary-color-dark: #ffffff;/* Color cuaternario dark*/
+  
+  --primary-color-light: #000000; /* Color principal light*/
+  --secondary-color-light: #444444; /* Color secundario light*/
+  --tertiary-color-light: #ffffff; /* Color terciario light*/
+  --quaternary-color-light: #1a1a1a; /* Color cuaternario light*/
+
+  /* Colores de Fondo */
+  --background-color-dark: #1c2c3c; /* Fondo dark */
+  --background-color-light: #f5f7fa; /* Fondo light */
+
+  /* Colores de Enlaces */
+  --link-hover-color-dark: #b1e12c; /* Hover en enlaces dark*/
+  --link-hover-color-light: #007acc; /* Hover en enlaces  light*/
+
+  /* Colores de Header */
+  --header-bg-dark: #1e2939;
+  --header-bg-light: #f1f1f1;
+
 }
 
 /* Modo claro */
 body.light-theme {
-  --primary-color: #007acc; /* Color principal claro */
-  --header-bg: #f1f1f1; /* Fondo navbar claro */
-  --card-bg: #ffffff; /* Fondo claro para las tarjetas */
-  --card-title-color: #007acc; /* Título claro */
-  --card-description-color: #1a1a1a; /* Descripción clara */
-  --button-bg-color: #007acc; /* Botón claro */
-  --button-hover-bg-color: #005f8e; /* Hover del botón */
-  --input-bg: #ffffff;
-  --input-text-color: #1a1a1a;
-  --input-border-color: #007acc; /* Borde input claro */
-  --error-bg-color: #ffffff; /* Fondo de error claro */
-  --error-text-color: #007acc; /* Texto de error claro */
-  --text-color: #1a1a1a; /* Texto claro */
-  --background-color: #f5f7fa; /* Fondo claro */
-  --link-hover-color: #004f6e; /* Hover de enlaces claros */
-  --btn-bg: #006f8e; /* Color de fondo para el tema claro */
-  --btn-text-color: #ffffff; /* Color del texto en el tema claro */
-  --btn-hover-bg: #0195b8; /* Hover en tema claro */
-  --btn-disabled-bg: #a4d5e2; /* Fondo deshabilitado en tema claro */
-  --btn-disabled-text-color: #ddd; /* Texto deshabilitado en tema claro */
+  --primary-color: var(--primary-color-light); /* Color principal claro */
+  --header-bg: var(--header-bg-light); /* Fondo navbar claro */
+  --card-bg: var(--tertiary-color-light); /* Fondo claro para las tarjetas */
+  --card-title-color: var(--primary-color-light); /* Título claro */
+  --card-description-color: var(--quaternary-color-light); /* Descripción clara */
+  --input-bg: var(--tertiary-color-light);
+  --input-text-color: var(--quaternary-color-light);
+  --input-border-color: var(--primary-color-light); /* Borde input claro */
+  --error-bg-color: var(--tertiary-color-light); /* Fondo de error claro */
+  --error-text-color: var(--primary-color-light); /* Texto de error claro */
+  --text-color: var(--quaternary-color-light); /* Texto claro */
+  --background-color: var(--background-color-light); /* Fondo claro */
+  --link-hover-color: var(--link-hover-color-light); /* Hover de enlaces claros */
+  --btn-bg: var(--primary-color-light); /* Color de fondo para el tema claro */
+  --btn-text-color: var(--tertiary-color-light); /* Color del texto en el tema claro */
+  --btn-hover-bg: var(--secondary-color-light); /* Hover en tema claro */
+  --btn-disabled-bg: #cccccc; /* Fondo deshabilitado en tema claro */
+  --btn-disabled-text-color: #666666; /* Texto deshabilitado en tema claro */
 }
 
 /* Modo oscuro */
 body.dark-theme {
-  --primary-color: #04b3cb; /* Color principal oscuro */
-  --header-bg: #1e2939; /* Fondo navbar oscuro */
-  --card-bg: #1e1e1e; /* Fondo oscuro para las tarjetas */
-  --card-title-color: #04b3cb; /* Título oscuro */
-  --card-description-color: #cfcfcf; /* Descripción oscura */
-  --button-bg-color: #04b3cb; /* Botón oscuro */
-  --button-hover-bg-color: #06cbe5; /* Hover del botón oscuro */
-  --input-bg: #1e1e1e;
-  --input-text-color: #ffffff;
-  --input-border-color: #04b3cb; /* Borde input oscuro */
-  --error-bg-color: #1e1e1e; /* Fondo de error oscuro */
-  --error-text-color: #04b3cb; /* Texto de error oscuro */
-  --text-color: #ffffff; /* Texto oscuro */
-  --background-color: #1c2c3c; /* Fondo oscuro */
-  --link-hover-color: #b1e12c; /* Hover de enlaces oscuros */
-  --btn-bg: #04b3cb; /* Color del fondo del botón */
-  --btn-text-color: #1a1a1a; /* Color del texto del botón */
-  --btn-hover-bg: #06cbe5; /* Color del fondo cuando se pasa el ratón */
+  --primary-color: var(--primary-color-dark); /* Color principal oscuro */
+  --header-bg: var(--header-bg-dark); /* Fondo navbar oscuro */
+  --card-bg: var(--tertiary-color-dark); /* Fondo oscuro para las tarjetas */
+  --card-title-color: var(--primary-color-dark); /* Título oscuro */
+  --card-description-color: var(--quaternary-color-dark); /* Descripción oscura */
+  --input-bg: var(--tertiary-color-dark);
+  --input-text-color: var(--quaternary-color-dark);
+  --input-border-color: var(--primary-color-dark); /* Borde input oscuro */
+  --error-bg-color: var(--tertiary-color-dark); /* Fondo de error oscuro */
+  --error-text-color: var(--primary-color-dark); /* Texto de error oscuro */
+  --text-color: var(--quaternary-color-dark); /* Texto oscuro */
+  --background-color: var(--background-color-dark); /* Fondo oscuro */
+  --link-hover-color: var(--link-hover-color-dark); /* Hover de enlaces oscuros */
+  --btn-bg: var(--primary-color-dark); /* Color del fondo del botón */
+  --btn-text-color: var(--tertiary-color-dark); /* Color del texto del botón */
+  --btn-hover-bg: var(--secondary-color-dark); /* Color del fondo cuando se pasa el ratón */
   --btn-disabled-bg: #6daeb4; /* Fondo del botón deshabilitado */
   --btn-disabled-text-color: #444; /* Color del texto del botón deshabilitado */
 }

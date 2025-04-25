@@ -9,13 +9,9 @@ function App() {
   return (
     <>
       <ThemeProvider>
-      <div className="app-wrapper">
         <Navbar />
-        <main className="main-content">
           <Home />
-        </main>
         <Footer />
-      </div>
     </ThemeProvider>
     </>
   );
