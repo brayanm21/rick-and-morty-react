@@ -27,19 +27,39 @@
 
 /* Modo claro */
 body.light-theme {
-  --primary-color: var(--primary-color-light); /* Color principal claro */
+  --background-color: var(--background-color-light); /* Fondo claro */
+  
   --header-bg: var(--header-bg-light); /* Fondo navbar claro */
+  --header-border-top: var(--primary-color-light);
+
   --card-bg: var(--tertiary-color-light); /* Fondo claro para las tarjetas */
   --card-title-color: var(--primary-color-light); /* Título claro */
   --card-description-color: var(--quaternary-color-light); /* Descripción clara */
+  
   --input-bg: var(--tertiary-color-light);
   --input-text-color: var(--quaternary-color-light);
   --input-border-color: var(--primary-color-light); /* Borde input claro */
+  --input-bg-focus: var(--tertiary-color-light);
+  --input-border-color-focus: var(--primary-color-light);
+  --input-box-shadow-focus: var(--primary-color-light);
+ 
   --error-bg-color: var(--tertiary-color-light); /* Fondo de error claro */
   --error-text-color: var(--primary-color-light); /* Texto de error claro */
-  --text-color: var(--quaternary-color-light); /* Texto claro */
-  --background-color: var(--background-color-light); /* Fondo claro */
+  --error-title-color: var(--primary-color-light);
+
+  --loading-text-color:var(--primary-color-light);
+
+  --paginator-page-number-color:var(--quaternary-color-light);
+
+  --spinner-border-color:var(--primary-color-light);
+  
+  --link-color:var(--primary-color-light);
   --link-hover-color: var(--link-hover-color-light); /* Hover de enlaces claros */
+  
+  --icon-color:var(--primary-color-light);
+  --icon-hamburger-color:var(--primary-color-light);
+
+  --btn-theme-toggle:var(--primary-color-light);
   --btn-bg: var(--primary-color-light); /* Color de fondo para el tema claro */
   --btn-text-color: var(--tertiary-color-light); /* Color del texto en el tema claro */
   --btn-hover-bg: var(--secondary-color-light); /* Hover en tema claro */
@@ -49,19 +69,39 @@ body.light-theme {
 
 /* Modo oscuro */
 body.dark-theme {
-  --primary-color: var(--primary-color-dark); /* Color principal oscuro */
+  --background-color: var(--background-color-dark); /* Fondo oscuro */
+  
   --header-bg: var(--header-bg-dark); /* Fondo navbar oscuro */
+  --header-border-top: var(--primary-color-dark);
+
   --card-bg: var(--tertiary-color-dark); /* Fondo oscuro para las tarjetas */
   --card-title-color: var(--primary-color-dark); /* Título oscuro */
   --card-description-color: var(--quaternary-color-dark); /* Descripción oscura */
+  
   --input-bg: var(--tertiary-color-dark);
   --input-text-color: var(--quaternary-color-dark);
   --input-border-color: var(--primary-color-dark); /* Borde input oscuro */
+  --input-bg-focus: var(--tertiary-color-dark);
+  --input-border-color-focus: var(--primary-color-dark);
+  --input-box-shadow-focus: var(--primary-color-dark);
+  
   --error-bg-color: var(--tertiary-color-dark); /* Fondo de error oscuro */
   --error-text-color: var(--primary-color-dark); /* Texto de error oscuro */
-  --text-color: var(--quaternary-color-dark); /* Texto oscuro */
-  --background-color: var(--background-color-dark); /* Fondo oscuro */
+  --error-title-color: var(--primary-color-dark);
+
+  --loading-text-color:var(--primary-color-dark);
+
+  --paginator-page-number-color:var(--quaternary-color-dark);
+
+  --spinner-border-color:var(--primary-color-dark);
+  
+  --link-color:var(--primary-color-dark);
   --link-hover-color: var(--link-hover-color-dark); /* Hover de enlaces oscuros */
+  
+  --icon-color:var(--primary-color-dark);
+  --icon-hamburger-color:var(--primary-color-dark);
+
+  --btn-theme-toggle:var(--primary-color-dark);
   --btn-bg: var(--primary-color-dark); /* Color del fondo del botón */
   --btn-text-color: var(--tertiary-color-dark); /* Color del texto del botón */
   --btn-hover-bg: var(--secondary-color-dark); /* Color del fondo cuando se pasa el ratón */

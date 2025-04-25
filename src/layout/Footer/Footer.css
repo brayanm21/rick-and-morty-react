@@ -1,9 +1,8 @@
 .footer {
   background-color: var(--header-bg);
-  color: var(--primary-color);
   padding: 1.5rem;
   text-align: center;
-  border-top: 2px solid var(--primary-color);
+  border-top: 2px solid var(--header-border-top);
   margin-top: 3rem;
   box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
 }
@@ -27,7 +26,7 @@
 }
 
 .icon {
-  color: var(--primary-color);
+  color: var(--icon-color);
   font-size: 30px;
   transition: color 0.3s ease;
 }
@@ -37,7 +36,7 @@
 }
 
 .signature-link {
-  color: var(--primary-color);
+  color: var(--link-color);
   text-decoration: none;
   font-family: monospace;
   transition: color 0.3s ease;

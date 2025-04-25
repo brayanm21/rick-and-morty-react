@@ -19,7 +19,7 @@
   font-size: 1.5em;
   font-weight: bold;
   margin-bottom: 10px;
-  color: var(--error-text-color);
+  color: var(--error-title-color);
 }
 
 .error-message {
