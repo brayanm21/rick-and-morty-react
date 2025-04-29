@@ -1,20 +1,28 @@
-import React, { useState, useEffect } from "react";
-import { useTheme } from "../../context/ThemeContext"; // Importar el hook para el tema
-import "./Navbar.css";
+import React, { useState, useEffect, useCallback } from "react";
+import { Link } from "react-router-dom";
 import { FaSun, FaMoon, FaBars, FaTimes } from "react-icons/fa";
+import { useTheme } from "../../context/ThemeContext";
+import "./Navbar.css";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme(); // Obtener el tema y la función para alternarlo
+  const { theme, toggleTheme } = useTheme();
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
+  // Cambiar clase del body según el tema
   useEffect(() => {
     document.body.classList.remove("light-theme", "dark-theme");
     document.body.classList.add(`${theme}-theme`);
   }, [theme]);
+
+  // Toggle de menú
+  const toggleMenu = useCallback(() => {
+    setMenuOpen(prev => !prev);
+  }, []);
+
+  // Cerrar menú al hacer clic en un enlace
+  const handleLinkClick = useCallback(() => {
+    setMenuOpen(false);
+  }, []);
 
   return (
     <header className="navbar">
@@ -25,9 +33,9 @@ const Navbar = () => {
       />
 
       <nav className={`nav-links ${menuOpen ? "active" : ""}`}>
-        <a href="#inicio" onClick={() => setMenuOpen(false)}>Inicio</a>
-        <a href="#servicios" onClick={() => setMenuOpen(false)}>Servicios</a>
-        <a href="#contacto" onClick={() => setMenuOpen(false)}>Contacto</a>
+        <Link to="/" onClick={handleLinkClick}>Inicio</Link>
+        <a href="#servicios" onClick={handleLinkClick}>Servicios</a>
+        <a href="#contacto" onClick={handleLinkClick}>Contacto</a>
 
         <button className="theme-toggle-btn" onClick={toggleTheme}>
           {theme === "dark" ? <FaMoon /> : <FaSun />}

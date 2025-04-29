@@ -1,0 +1,44 @@
+.wrapper {
+  position: fixed; /* Dejarlo fijo en la pantalla */
+  top: 50%; /* Centro de pantalla */
+  left: 50%; /* Centro de pantalla */
+  transform: translate(-50%, -50%); /* Centro de pantalla perfecto*/
+  width: 100%;
+}
+
+.wrapper span {
+  position: relative;
+  color: var(--error-404-bg);
+  font-weight: 900;
+  font-size: clamp(8rem, 25vw, 26rem);
+  display: inline-block;
+  line-height: 1;
+}
+
+/* Imagen superpuesta SOBRE el texto */
+.wrapper span::before {
+  content: "";
+  background-image: url("https://staticdelivery.nexusmods.com/mods/1151/images/528-0-1447526230.png");
+  /* background-image: url('https://www.pngplay.com/wp-content/uploads/10/Rick-And-Morty-Background-PNG.png'); */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 150%;
+  width: 150%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  pointer-events: none; /* No bloquea clics */
+}
+
+/* Elimina el letter-spacing exagerado del primer carácter */
+.wrapper span::first-letter {
+  letter-spacing: 10vmax;
+}
+
+.error-description {
+  font-size: 0.95em;
+  margin-bottom: 16px;
+  color: var(--error-404-text-color);
+}

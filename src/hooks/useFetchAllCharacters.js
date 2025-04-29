@@ -1,30 +1,34 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { fetchCharactersByPage } from "../services/characterService";
 
 const useFetchAllCharacters = (page) => {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [isFetchSuccessful, setIsFetchSuccessful] = useState(true);
+  const [totalPages, setTotalPages] = useState(1);
+  const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const getCharacters = async () => {
-      setLoading(true);
-      try {
-        const data = await fetchCharactersByPage(page);
-        setCharacters(data.results);
-        setIsFetchSuccessful(true);
-      } catch (err) {
-        console.error("Error fetching characters:", err);
-        setIsFetchSuccessful(false);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    getCharacters();
+  const getCharacters = useCallback(async () => {
+    if (page === null) return;
+    setLoading(true);
+    setError(null);
+    try {
+      const data = await fetchCharactersByPage(page);
+      setCharacters(data.results || []);
+      setTotalPages(data.totalPages || 1);
+    } catch (err) {
+      console.error("Error fetching characters:", err);
+      setError("Failed to fetch characters.");
+      setCharacters([]);
+    } finally {
+      setLoading(false);
+    }
   }, [page]);
 
-  return { characters, loading, isFetchSuccessful };
+  useEffect(() => {
+    getCharacters();
+  }, [getCharacters]);
+
+  return { characters, loading, totalPages, error };
 };
 
 export default useFetchAllCharacters;

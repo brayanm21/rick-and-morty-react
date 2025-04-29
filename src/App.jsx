@@ -4,6 +4,9 @@ import "./assets/styles/themes.css";
 import Navbar from "./layout/Navbar/Navbar";
 import { ThemeProvider } from "./context/ThemeContext";
 import Footer from "./layout/Footer/Footer";
+import { Routes, Route } from "react-router-dom";
+import CharacterPage from "./pages/CharacterPage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 function App() {
   return (
@@ -12,7 +15,11 @@ function App() {
         <div className="app-wrapper">
           <Navbar />
           <main>
-            <Home />
+            <Routes>
+              <Route path="/" element={<Home />}/>
+              <Route path="/character/:id" element={<CharacterPage/>}/>
+              <Route path="*" element={<NotFoundPage />}/>
+            </Routes>
           </main>
           <Footer />
         </div>

@@ -1,13 +1,21 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import "./styles.css";
 import Button from "../../Button/Button";
 import {
   statusTranslations,
   genderTranslations,
   speciesTranslations
-} from '../../../utils/translations'; //para la traduccion
+} from '../../../utils/translations'; // para la traducción
 
 const CharacterCard = ({ character }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/character/${character.id}`);
+  };
+
   return (
     <div className="character-card">
       <img src={character.image} alt={character.name} className="card-img" />
@@ -19,7 +27,7 @@ const CharacterCard = ({ character }) => {
         <p className="card-description">
           {speciesTranslations[character.species]} - {genderTranslations[character.gender]}
         </p>
-        <Button>Ver más</Button>
+        <Button onClick={handleClick}>Ver más</Button>
       </div>
     </div>
   );

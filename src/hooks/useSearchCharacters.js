@@ -8,13 +8,17 @@ const useSearchCharacters = (inputValue, pageSearch) => {
   const [hasMoreResults, setHasMoreResults] = useState(true);
 
   useEffect(() => {
-    if (!inputValue) return;
+    if (!inputValue || loading) return;
 
     const getSearchResults = async () => {
       setLoading(true);
       try {
         const data = await searchCharactersByName(inputValue, pageSearch);
-        setSearchedCharacters((prev) => [...prev, ...data.results]);
+        setSearchedCharacters((prev) => {
+          const idsPrev = new Set(prev.map((char) => char.id));
+          const nuevos = data.results.filter((char) => !idsPrev.has(char.id));
+          return [...prev, ...nuevos];
+        });
         setHasMoreResults(Boolean(data.info?.next));
         setIsFetchSuccessful(true);
       } catch (error) {
