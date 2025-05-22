@@ -34,8 +34,8 @@ const Navbar = () => {
 
       <nav className={`nav-links ${menuOpen ? "active" : ""}`}>
         <Link to="/" onClick={handleLinkClick}>Inicio</Link>
-        <a href="#servicios" onClick={handleLinkClick}>Servicios</a>
-        <a href="#contacto" onClick={handleLinkClick}>Contacto</a>
+        <Link to="/characters" onClick={handleLinkClick}>Personajes</Link>
+        <Link to="/about" onClick={handleLinkClick}>Sobre el Proyecto</Link>
 
         <button className="theme-toggle-btn" onClick={toggleTheme}>
           {theme === "dark" ? <FaMoon /> : <FaSun />}

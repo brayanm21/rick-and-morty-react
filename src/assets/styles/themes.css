@@ -64,6 +64,9 @@ body.light-theme {
 
   --error-404-bg: var(--quaternary-color-light);
   --error-404-text-color: var(--quaternary-color-light);
+
+  --title-color: var(--primary-color-light); 
+  --description-color: var(--quaternary-color-light); 
 }
 
 /* Modo oscuro */
@@ -106,4 +109,7 @@ body.dark-theme {
 
   --error-404-bg: var(--quaternary-color-dark);
   --error-404-text-color: var(--quaternary-color-dark);
+
+  --title-color: var(--primary-color-dark); 
+  --description-color: var(--quaternary-color-dark); 
 }

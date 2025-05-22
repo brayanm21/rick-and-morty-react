@@ -1,0 +1,41 @@
+.character-card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 250px;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.character-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(0, 179, 203, 0.3);
+}
+
+.card-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.card-title {
+  font-size: 1.4em;
+  margin-bottom: 8px;
+  color: var(--card-title-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-description {
+  font-size: 0.95em;
+  margin-bottom: 16px;
+  color: var(--card-description-color);
+}
+

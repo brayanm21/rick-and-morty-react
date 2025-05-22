@@ -1,0 +1,25 @@
+.status-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 6px 10px;
+  font-size: 0.85em;
+  font-weight: bold;
+  border-radius: 6px;
+  backdrop-filter: blur(3px);
+}
+
+.alive {
+  background-color: rgba(114, 219, 44, 0.8);
+  color: #121212;
+}
+
+.dead {
+  background-color: rgba(255, 0, 0, 0.75);
+  color: #f0f0f0;
+}
+
+.unknown {
+  background-color: rgba(140, 0, 255, 0.75);
+  color: #f8f8f8;
+}

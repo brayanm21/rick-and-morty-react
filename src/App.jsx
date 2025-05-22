@@ -1,12 +1,14 @@
-import Home from "./pages/Home";
+import CharactersPage from "./pages/CharactersPage";
 import "./App.css";
 import "./assets/styles/themes.css";
-import Navbar from "./layout/Navbar/Navbar";
+import Navbar from "./layout/Navbar";
 import { ThemeProvider } from "./context/ThemeContext";
-import Footer from "./layout/Footer/Footer";
+import Footer from "./layout/Footer";
 import { Routes, Route } from "react-router-dom";
-import CharacterPage from "./pages/CharacterPage";
-import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import CharacterDetailPage from "./pages/CharacterDetailPage";
+import NotFoundPage from "./pages/NotFoundPage";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage"
 
 function App() {
   return (
@@ -16,8 +18,10 @@ function App() {
           <Navbar />
           <main>
             <Routes>
-              <Route path="/" element={<Home />}/>
-              <Route path="/character/:id" element={<CharacterPage/>}/>
+              <Route path="/" element={<HomePage/>}/>
+              <Route path="/characters" element={<CharactersPage />}/>
+              <Route path="/characters/:id" element={<CharacterDetailPage/>}/>
+              <Route path="/about" element={<AboutPage />} />
               <Route path="*" element={<NotFoundPage />}/>
             </Routes>
           </main>
