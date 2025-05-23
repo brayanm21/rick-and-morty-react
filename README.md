@@ -81,7 +81,7 @@ src/
 
 ```bash
 # 1. Clona el repositorio
-https://github.com/tu_usuario/rick-morty-app
+https://github.com/brayanm21/rick-and-morty-react
 
 # 2. Instala dependencias
 npm install

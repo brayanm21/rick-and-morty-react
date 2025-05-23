@@ -106,7 +106,7 @@ src/
         <div className="code-block">
           <pre>{String.raw`
 # 1. Clona el repositorio
-git clone https://github.com/tu_usuario/rick-morty-app
+git clone https://github.com/brayanm21/rick-and-morty-react
 
 # 2. Instala dependencias
 npm install
