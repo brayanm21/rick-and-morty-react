@@ -67,7 +67,7 @@ src/
 └── index.css
 `})}),S.jsxs("p",{children:["La estructura del código sigue una arquitectura modular para mejorar el mantenimiento y la escalabilidad. Cada componente se importa desde su archivo ",S.jsx("code",{children:"index.jsx"})," para facilitar el acceso. Los estilos están encapsulados con ",S.jsx("strong",{children:"CSS Modules"}),"."]})]}),S.jsxs("section",{children:[S.jsx("h2",{children:"📦 Instalación y uso"}),S.jsx("p",{children:"Sigue estos pasos para correr el proyecto localmente:"}),S.jsx("div",{className:"code-block",children:S.jsx("pre",{children:String.raw`
 # 1. Clona el repositorio
-git clone https://github.com/tu_usuario/rick-morty-app
+git clone https://github.com/brayanm21/rick-and-morty-react
 
 # 2. Instala dependencias
 npm install
